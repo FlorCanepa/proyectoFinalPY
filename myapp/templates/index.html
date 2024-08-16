@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Página principal de proyecto final Coder</h1>
+    <h2>Libros Publicados</h2>
+    <ul>
+        {% for libro in libros %}
+            <li>
+                <h2>{{ libro.title }}</h2>
+                <p><strong>Autor:</strong> {{ libro.author }}</p>
+                {%if libro.editorial %}
+                <p><strong>Editorial:</strong> {{ libro.editorial }}</p>
+                {%else %}
+                <p>No hay editorial declarada</p>
+                {% endif %}
+
+                {% if libro.cover_image %}
+                    <img src="{{ libro.cover_image.url }}" alt="{{ libro.title }}" style="width: 150px; height: auto;">
+                {% else %}
+                    <p>No hay imagen de portada</p>
+                {% endif %}
+                <p><strong>Fecha de publicación:</strong> {{ libro.publication_date }}</p>
+                <a href="{% url 'editar_libro' libro.pk %}">Editar</a>
+                <a href="{% url 'borrar_libro' libro.pk %}">Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
