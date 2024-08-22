@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends 'base.html' %}
+
+{%block content%}
     <title>Iniciar Sesión</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
+
     <h2>Iniciar Sesión</h2>
     <form method="POST">
         {% csrf_token %}
@@ -15,5 +10,4 @@
         <button type="submit">Iniciar sesión</button>
     </form>
     <p>¿No tenes una cuenta? <a href="{% url 'register' %}">Registrate acá</a></p>
-</body>
-</html>
+{%endblock%}

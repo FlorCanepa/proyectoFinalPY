@@ -60,7 +60,7 @@ button:hover {
 
 .contenedor-libros {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 20px;
     justify-content: center;
     padding: 20px;
@@ -96,4 +96,24 @@ button:hover {
 .caja-libro p {
     font-size: 14px;
     color: #777;
+}
+
+
+.centrar {
+    text-align: center;
+}
+
+
+.botones {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+}
+
+#boton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
 }

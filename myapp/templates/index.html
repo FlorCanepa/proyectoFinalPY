@@ -1,11 +1,15 @@
 {% extends "base.html" %}
+{% load static %}
+
 
 {% block content %}
+
     <h1>Página principal de proyecto final Coder</h1>
     <h2>Libros Publicados</h2>
-    <ul>
+    <div class="contenedor-libros">
         {% for libro in libros %}
-            <li>
+        <div class="caja-libro">
+
                 <h2>{{ libro.title }}</h2>
                 <p><strong>Autor:</strong> {{ libro.author }}</p>
                 {%if libro.editorial %}
@@ -22,7 +26,8 @@
                 <p><strong>Fecha de publicación:</strong> {{ libro.publication_date }}</p>
                 <a href="{% url 'editar_libro' libro.pk %}">Editar</a>
                 <a href="{% url 'borrar_libro' libro.pk %}">Eliminar</a>
-            </li>
+        </div>
         {% endfor %}
-    </ul>
+    </div>
+
 {% endblock %}

@@ -110,3 +110,6 @@ def registro_exitoso(request):
 def libro_listado(request):
     libros = Libro.objects.all()
     return render(request, 'libro_listado.html', {'libros': libros})
+
+def acerca_de(request):
+    return render(request, 'acerca_de.html')
